@@ -8,5 +8,25 @@ namespace BinarySearchTree
 {
     class BinarySearchTree
     {
+        public Node rootNode;
+        public Node leftChildNode;
+        public Node rightChildNode;
+
+        public BinarySearchTree()
+        {
+            Node rootNode = new Node();
+            Node leftChildNode = new Node();
+            Node rightChildNode = new Node();
+        }
+
+        public void AddNode()
+        {
+
+        }
+
+        public void Search()
+        {
+
+        }
     }
 }
