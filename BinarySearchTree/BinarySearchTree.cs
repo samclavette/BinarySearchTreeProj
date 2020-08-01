@@ -14,14 +14,35 @@ namespace BinarySearchTree
 
         public BinarySearchTree()
         {
-            Node rootNode = new Node();
-            Node leftChildNode = new Node();
-            Node rightChildNode = new Node();
+            Node rootNode = new Node(100);
+            Node leftChildNode = new Node(80);
+            Node rightChildNode = new Node(120);
         }
 
-        public void AddNode()
+        public void AddNode(Node newNode)
         {
+            if (newNode.value > rootNode.value)
+            {
+                if (newNode.value > rightChildNode.value)
+                {
 
+                }
+                else if (newNode.value <= rightChildNode.value)
+                {
+
+                }
+            }
+            else if (newNode.value <= rootNode.value)
+            {
+                if (newNode.value > leftChildNode.value)
+                {
+
+                }
+                else if (newNode.value <= leftChildNode.value)
+                {
+
+                }
+            }
         }
 
         public void Search()

@@ -10,9 +10,9 @@ namespace BinarySearchTree
     {
         public int value;
 
-        public Node()
+        public Node(int value)
         {
-
+            this.value = value;
         }
     }
 }
