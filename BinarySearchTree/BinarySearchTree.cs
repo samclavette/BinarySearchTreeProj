@@ -9,38 +9,51 @@ namespace BinarySearchTree
     class BinarySearchTree
     {
         public Node rootNode;
-        public Node leftChildNode;
-        public Node rightChildNode;
+        //public Node leftChildNode;
+        //public Node rightChildNode;
 
-        public BinarySearchTree()
-        {
-            Node rootNode = new Node(100);
-            Node leftChildNode = new Node(80);
-            Node rightChildNode = new Node(120);
-        }
+        //public BinarySearchTree()
+        //{
+          
+        //}
 
         public void AddNode(Node newNode)
         {
-            if (newNode.value > rootNode.value)
+            if (rootNode == null)
             {
-                if (newNode.value > rightChildNode.value)
+                rootNode = newNode;
+            }
+            // right side of BST
+            else if (newNode.data > rootNode.data)
+            {
+                if (rootNode.rightChildNode == null)
                 {
-
+                    rootNode.rightChildNode = newNode;
                 }
-                else if (newNode.value <= rightChildNode.value)
+                else
                 {
-
+                    rootNode = rootNode.leftChildNode;
+                    rootNode.rightChildNode = newNode;
                 }
             }
-            else if (newNode.value <= rootNode.value)
+            // left side of BST
+            else if (newNode.data <= rootNode.data)
             {
-                if (newNode.value > leftChildNode.value)
+                if (rootNode.leftChildNode == null)
                 {
-
+                    rootNode.leftChildNode = newNode;
                 }
-                else if (newNode.value <= leftChildNode.value)
+                else
                 {
-
+                    rootNode = rootNode.leftChildNode;
+                    if (newNode.data > rootNode.data)
+                    {
+                        rootNode.rightChildNode = newNode;
+                    }
+                    else if (newNode.data <= rootNode.data)
+                    {
+                        rootNode.leftChildNode = newNode;
+                    }
                 }
             }
         }
