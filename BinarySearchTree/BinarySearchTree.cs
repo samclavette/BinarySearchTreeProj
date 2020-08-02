@@ -9,13 +9,11 @@ namespace BinarySearchTree
     class BinarySearchTree
     {
         public Node rootNode;
-        //public Node leftChildNode;
-        //public Node rightChildNode;
 
-        //public BinarySearchTree()
-        //{
-          
-        //}
+        public BinarySearchTree()
+        {
+            
+        }
 
         public void AddNode(Node newNode)
         {
@@ -33,7 +31,14 @@ namespace BinarySearchTree
                 else
                 {
                     rootNode = rootNode.leftChildNode;
-                    rootNode.rightChildNode = newNode;
+                    if (newNode.data > rootNode.data)
+                    {
+                        rootNode.rightChildNode = newNode;
+                    }
+                    else if (newNode.data <= rootNode.data)
+                    {
+                        rootNode.leftChildNode = newNode;
+                    }
                 }
             }
             // left side of BST
