@@ -21,46 +21,32 @@ namespace BinarySearchTree
             {
                 rootNode = newNode;
             }
-            // right side of BST
-            else if (newNode.data > rootNode.data)
+            else
             {
-                if (rootNode.rightChildNode == null)
+                Node currentNode = rootNode;
+
+                while (currentNode != null)
                 {
-                    rootNode.rightChildNode = newNode;
-                }
-                else
-                {
-                    rootNode = rootNode.leftChildNode;
-                    if (newNode.data > rootNode.data)
+                    if (newNode.data > currentNode.data)
                     {
-                        rootNode.rightChildNode = newNode;
+                        if (currentNode.rightChildNode == null)
+                        {
+                            currentNode.rightChildNode = newNode;
+                        }
+                        else
+                            currentNode = currentNode.rightChildNode;
                     }
-                    else if (newNode.data <= rootNode.data)
+                    else if (newNode.data <= currentNode.data)
                     {
-                        rootNode.leftChildNode = newNode;
-                    }
-                }
-            }
-            // left side of BST
-            else if (newNode.data <= rootNode.data)
-            {
-                if (rootNode.leftChildNode == null)
-                {
-                    rootNode.leftChildNode = newNode;
-                }
-                else
-                {
-                    rootNode = rootNode.leftChildNode;
-                    if (newNode.data > rootNode.data)
-                    {
-                        rootNode.rightChildNode = newNode;
-                    }
-                    else if (newNode.data <= rootNode.data)
-                    {
-                        rootNode.leftChildNode = newNode;
+                        if (currentNode.leftChildNode == null)
+                        {
+                            currentNode.leftChildNode = newNode;
+                        }
+                        else
+                            currentNode = currentNode.leftChildNode;
                     }
                 }
-            }
+            }           
         }
 
         public void Search()
