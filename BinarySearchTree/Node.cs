@@ -9,7 +9,6 @@ namespace BinarySearchTree
     class Node
     {
         public int data;
-        public Node lastNode;
         public Node rightChildNode;
         public Node leftChildNode;
 
